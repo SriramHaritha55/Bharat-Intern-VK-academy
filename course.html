@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VK Academy Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #4e54c8;
+      --accent: #8f94fb;
+      --bg: #f0f2ff;
+      --card: #ffffff;
+      --text: #222;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    nav {
+      background: var(--primary);
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    nav .links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      background: var(--card);
+      border: 2px solid var(--accent);
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .courses {
+      display: none;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .courses.active {
+      display: flex;
+    }
+
+    .course-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: calc(50% - 20px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .course-card input {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+    .demo-banner {
+      margin: 30px 0;
+      padding: 15px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .summary {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .summary button {
+      padding: 10px 25px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .course-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">
+      <img src="p1.jpg" alt="Logo">
+      <span>VK Academy</span>
+    </div>
+    <div class="links">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="course.html"><i class="fas fa-book-open"></i> Courses</a>
+      <a href="contact.html"><i class="fas fa-phone"></i> Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(0)">School</div>
+      <div class="tab" onclick="showTab(1)">Intermediate</div>
+      <div class="tab" onclick="showTab(2)">UG/PG</div>
+      <div class="tab" onclick="showTab(3)">B.Tech</div>
+    </div>
+
+    <div class="courses active">
+      <div class="course-card"><input type="checkbox" data-price="3000"> Mathematics - ₹3000</div>
+      <div class="course-card"><input type="checkbox" data-price="3200"> Science - ₹3200</div>
+      <div class="course-card"><input type="checkbox" data-price="2800"> Social Studies - ₹2800</div>
+      <div class="course-card"><input type="checkbox" data-price="2500"> English - ₹2500</div>
+    </div>
+
+    <div class="courses">
+      <div class="course-card"><input type="checkbox" data-price="3500"> Mathematics - ₹3500</div>
+      <div class="course-card"><input type="checkbox" data-price="3600"> Physics - ₹3600</div>
+      <div class="course-card"><input type="checkbox" data-price="3600"> Chemistry - ₹3600</div>
+      <div class="course-card"><input type="checkbox" data-price="3000"> Commerce - ₹3000</div>
+    </div>
+
+    <div class="courses">
+      <div class="course-card"><input type="checkbox" data-price="5000"> B.Sc / M.Sc - ₹5000</div>
+      <div class="course-card"><input type="checkbox" data-price="5500"> BCA / MCA - ₹5500</div>
+      <div class="course-card"><input type="checkbox" data-price="5200"> B.Pharmacy / Diploma - ₹5200</div>
+      <div class="course-card"><input type="checkbox" data-price="4800"> B.Com / M.Com - ₹4800</div>
+      <div class="course-card"><input type="checkbox" data-price="6000"> MBA (All Subjects) - ₹6000</div>
+    </div>
+
+    <div class="courses">
+      <div class="course-card"><input type="checkbox" data-price="4000"> Mathematics 1 (M1) - ₹4000</div>
+      <div class="course-card"><input type="checkbox" data-price="4000"> Mathematics 2 (M2) - ₹4000</div>
+      <div class="course-card"><input type="checkbox" data-price="4200"> Mathematics 3 (M3) - ₹4200</div>
+      <div class="course-card"><input type="checkbox" data-price="4200"> Mathematics 4 (M4) - ₹4200</div>
+    </div>
+
+    <div class="demo-banner">🎉 FREE 5 Days Demo Classes Available!</div>
+
+    <div class="summary">
+      <h3>Total Price: ₹<span id="totalPrice">0</span></h3>
+      <button onclick="submitSelection()"><i class="fas fa-check-circle"></i> Submit Selection</button>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 VK Academy | All rights reserved.
+  </footer>
+
+  <script>
+    function showTab(index) {
+      const tabs = document.querySelectorAll('.tab');
+      const sections = document.querySelectorAll('.courses');
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      tabs[index].classList.add('active');
+      sections[index].classList.add('active');
+      updateTotal();
+    }
+
+    function updateTotal() {
+      const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+      let total = 0;
+      allCheckboxes.forEach(cb => {
+        if (cb.checked) {
+          total += parseInt(cb.getAttribute('data-price'));
+        }
+      });
+      document.getElementById('totalPrice').innerText = total;
+    }
+
+    function submitSelection() {
+      const selected = [];
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        if (cb.checked) {
+          selected.push(cb.parentElement.innerText.trim());
+        }
+      });
+      if (selected.length === 0) {
+        alert("Please select at least one course.");
+      } else {
+        alert("You have selected:\n\n" + selected.join("\n"));
+      }
+    }
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', updateTotal);
+    });
+  </script>
+</body>
+</html>
